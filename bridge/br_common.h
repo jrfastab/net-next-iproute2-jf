@@ -5,6 +5,7 @@ extern int print_fdb(const struct sockaddr_nl *who,
 		     struct nlmsghdr *n, void *arg);
 
 extern int do_fdb(int argc, char **argv);
+extern int do_bridge(int argc, char **argv);
 extern int do_monitor(int argc, char **argv);
 
 extern int preferred_family;

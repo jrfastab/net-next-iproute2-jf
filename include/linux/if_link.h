@@ -142,6 +142,7 @@ enum {
 #define IFLA_PROMISCUITY IFLA_PROMISCUITY
 	IFLA_NUM_TX_QUEUES,
 	IFLA_NUM_RX_QUEUES,
+	IFLA_BRIDGE,
 	__IFLA_MAX
 };
 
@@ -374,6 +375,21 @@ enum {
 #define PORT_PROFILE_MAX	40
 #define PORT_UUID_MAX		16
 #define PORT_SELF_VF		-1
+
+/* Bridge Flags */
+#define BRIDGE_FLAGS_MASTER	1	/* Bridge command to/from master */
+#define BRIDGE_FLAGS_SELF	2	/* Bridge command to/from lowerdev */
+
+#define BRIDGE_MODE_VEB		0	/* Default loopback mode */
+#define BRIDGE_MODE_VEPA	1	/* 802.1Qbg defined VEPA mode */
+
+/* Bridge management nested attributes */
+enum {
+	IFLA_BRIDGE_FLAGS,
+	IFLA_BRIDGE_MODE,
+	__IFLA_BRIDGE_MAX,
+};
+#define IFLA_BRIDGE_MAX (__IFLA_BRIDGE_MAX - 1)
 
 enum {
 	PORT_REQUEST_PREASSOCIATE = 0,
